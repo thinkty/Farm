@@ -10,7 +10,20 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class MainController: UIViewController {
+class MainController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    //protocols for tableview
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //hardcoded
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomCell", for: indexPath)
+        
+        return cell
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

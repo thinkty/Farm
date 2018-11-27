@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="1ns-Cg-waC" kind="relationship" relationship="rootViewController" id="GT3-0s-yzJ"/>
+                        <segue destination="xtX-xm-Yca" kind="relationship" relationship="rootViewController" id="2ZY-mV-k0e"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bC0-rY-ypW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -94,7 +94,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="8MX-v2-GMZ">
-                                <rect key="frame" x="0.0" y="64" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="Fe5-FX-tPJ"/>
                                 </constraints>
@@ -104,13 +104,13 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cHJ-Gp-8HC">
-                                <rect key="frame" x="0.0" y="120" width="414" height="616"/>
+                                <rect key="frame" x="0.0" y="76" width="414" height="660"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRoomCell" id="iui-qc-o1p">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iui-qc-o1p" id="vJ5-b5-9Nj">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iui-qc-o1p" id="vJ5-b5-9Nj" customClass="ChatRoomCell" customModule="FarmChat" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -180,7 +180,65 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1872.4637681159422" y="97.010869565217405"/>
+            <point key="canvasLocation" x="2667" y="111"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="VPy-uc-h3U">
+            <objects>
+                <viewController id="xtX-xm-Yca" customClass="ChatViewController" customModule="FarmChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ebg-7a-JgI" customClass="ChatRoomCell" customModule="FarmChat" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZ3-en-nij" userLabel="Compose View">
+                                <rect key="frame" x="0.0" y="686" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0T-f2-zPZ">
+                                        <rect key="frame" x="368" y="10" width="36" height="30"/>
+                                        <state key="normal" title="Send">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendPressed:" destination="xtX-xm-Yca" eventType="touchUpInside" id="lKq-g6-spm"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Message" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hUB-8D-EFJ">
+                                        <rect key="frame" x="8" y="10" width="332" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="send"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4Mf-yr-uN2"/>
+                                    <constraint firstAttribute="bottom" secondItem="hUB-8D-EFJ" secondAttribute="bottom" constant="10" id="Eq1-9l-W29"/>
+                                    <constraint firstItem="hUB-8D-EFJ" firstAttribute="top" secondItem="SZ3-en-nij" secondAttribute="top" constant="10" id="FgL-5X-ApQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="U0T-f2-zPZ" secondAttribute="bottom" constant="10" id="j3l-8G-Nid"/>
+                                    <constraint firstAttribute="trailing" secondItem="U0T-f2-zPZ" secondAttribute="trailing" constant="10" id="odQ-qd-5V2"/>
+                                    <constraint firstItem="U0T-f2-zPZ" firstAttribute="leading" secondItem="hUB-8D-EFJ" secondAttribute="trailing" constant="8" id="x5E-Wh-yyh"/>
+                                    <constraint firstItem="hUB-8D-EFJ" firstAttribute="leading" secondItem="SZ3-en-nij" secondAttribute="leading" constant="8" id="zkC-ps-Bt4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SZ3-en-nij" firstAttribute="leading" secondItem="HqP-xO-beY" secondAttribute="leading" id="OGR-0X-G2M"/>
+                            <constraint firstItem="SZ3-en-nij" firstAttribute="trailing" secondItem="HqP-xO-beY" secondAttribute="trailing" id="eeA-ZE-cy0"/>
+                            <constraint firstItem="SZ3-en-nij" firstAttribute="bottom" secondItem="HqP-xO-beY" secondAttribute="bottom" id="gr7-jQ-VgB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HqP-xO-beY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="494-59-Fm4"/>
+                    <connections>
+                        <outlet property="heightConstraint" destination="4Mf-yr-uN2" id="9PI-I2-uZj"/>
+                        <outlet property="messageTextField" destination="hUB-8D-EFJ" id="tdr-Su-zN7"/>
+                        <outlet property="messageView" destination="Ebg-7a-JgI" id="DEx-eZ-nJl"/>
+                        <outlet property="sendButton" destination="U0T-f2-zPZ" id="ed9-qv-jrl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aM4-Uv-MIP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1908.6956521739132" y="98.641304347826093"/>
         </scene>
     </scenes>
 </document>
