@@ -13,7 +13,6 @@
 		331F4F712197D30400294E10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 331F4F702197D30400294E10 /* Assets.xcassets */; };
 		331F4F742197D30400294E10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331F4F722197D30400294E10 /* LaunchScreen.storyboard */; };
 		331F4F7C2197D38700294E10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 331F4F7B2197D38700294E10 /* GoogleService-Info.plist */; };
-		3321555B2198A7CE00E589CB /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3321555A2198A7CE00E589CB /* MainController.swift */; };
 		33C9F98021A1F27E00DCDF34 /* ChatRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C9F97F21A1F27E00DCDF34 /* ChatRoomCell.swift */; };
 		33C9F98221A1F3F700DCDF34 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C9F98121A1F3F700DCDF34 /* ChatViewController.swift */; };
 		CBBCF4ABA64F2D54DFCF3EB9 /* Pods_FarmChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE47A786A1E80CB306E9AEF /* Pods_FarmChat.framework */; };
@@ -29,7 +28,6 @@
 		331F4F732197D30400294E10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		331F4F752197D30400294E10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		331F4F7B2197D38700294E10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3321555A2198A7CE00E589CB /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		33C9F97F21A1F27E00DCDF34 /* ChatRoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomCell.swift; sourceTree = "<group>"; };
 		33C9F98121A1F3F700DCDF34 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		A5C914661D88EA9F4CB2F2AB /* Pods-FarmChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FarmChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-FarmChat/Pods-FarmChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 			children = (
 				331F4F692197D2F800294E10 /* AppDelegate.swift */,
 				331F4F6B2197D2F800294E10 /* ViewController.swift */,
-				3321555A2198A7CE00E589CB /* MainController.swift */,
 				331F4F6D2197D2F800294E10 /* Main.storyboard */,
 				331F4F702197D30400294E10 /* Assets.xcassets */,
 				331F4F722197D30400294E10 /* LaunchScreen.storyboard */,
@@ -229,7 +226,6 @@
 			files = (
 				33C9F98021A1F27E00DCDF34 /* ChatRoomCell.swift in Sources */,
 				331F4F6C2197D2F800294E10 /* ViewController.swift in Sources */,
-				3321555B2198A7CE00E589CB /* MainController.swift in Sources */,
 				33C9F98221A1F3F700DCDF34 /* ChatViewController.swift in Sources */,
 				331F4F6A2197D2F800294E10 /* AppDelegate.swift in Sources */,
 			);
@@ -385,7 +381,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.taeYoonKim.FarmChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taeYoonKim.Farm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -404,7 +400,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.taeYoonKim.FarmChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taeYoonKim.Farm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
