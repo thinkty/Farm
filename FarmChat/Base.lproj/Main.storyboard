@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="1007" y="99"/>
         </scene>
-        <!--Main Controller-->
+        <!--Chat Room Controller-->
         <scene sceneID="nyv-qp-LId">
             <objects>
-                <viewController id="1ns-Cg-waC" customClass="MainController" customModule="FarmChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1ns-Cg-waC" customClass="ChatRoomController" customModule="FarmChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ugf-IF-fhf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,6 +168,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="JWN-MN-w2D" id="sbY-Pi-gnE"/>
+                        <outlet property="searchField" destination="8MX-v2-GMZ" id="9B4-ej-rcw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgN-06-XVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -242,11 +243,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="user" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="74q-hF-OCk">
-                                <rect key="frame" x="346" y="260" width="59" height="30"/>
+                                <rect key="frame" x="344" y="260" width="61" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="ih1-cz-Bag">
@@ -284,7 +285,6 @@
                         <outlet property="OpponentName" destination="mpf-Qu-6cO" id="9dr-Jw-CKq"/>
                         <outlet property="heightConstraint" destination="4Mf-yr-uN2" id="9PI-I2-uZj"/>
                         <outlet property="messageTextField" destination="hUB-8D-EFJ" id="tdr-Su-zN7"/>
-                        <outlet property="messageView" destination="Ebg-7a-JgI" id="DEx-eZ-nJl"/>
                         <outlet property="sendButton" destination="U0T-f2-zPZ" id="ed9-qv-jrl"/>
                         <outlet property="userMessageView" destination="ih1-cz-Bag" id="suD-zy-ijI"/>
                         <outlet property="userName" destination="74q-hF-OCk" id="CgN-gR-Wez"/>

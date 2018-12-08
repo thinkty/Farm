@@ -16,7 +16,6 @@ class ChatViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     @IBOutlet var userName: UITextField!
     @IBOutlet var OpponentName: UITextField!
     @IBOutlet var OpponentMessageView: UITextView!
-    @IBOutlet var messageView: ChatRoomCell!
     @IBOutlet var heightConstraint: NSLayoutConstraint!
     @IBOutlet var messageTextField: UITextField!
     @IBOutlet var sendButton: UIButton!
@@ -106,13 +105,13 @@ class ChatViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     
     //retrieve message
     func retrieveMessages() {
-        let MessageDB = Database.database().reference().child("Messages")
+        let MessageDB = Database.database().reference().child("Messages").child((Auth.auth().currentUser?.uid)!)
         let usernameDB = Database.database().reference().child("Usernames")
         var text: String = ""
         var sender: String = ""
-        var senderUsername: String = ""
+        //var senderUsername: String = ""
         
-        MessageDB.observe(.childAdded, with: { (snapshot) in
+        MessageDB.observeSingleEvent(of: .value, with: { (snapshot) in
             let snapshotValue = snapshot.value as! Dictionary<String, String>
             
             text = snapshotValue["MessageBody"]! //give the text
@@ -122,21 +121,45 @@ class ChatViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
             print("Sender        : ", sender)
             print("Text          : ", text)
             
+            usernameDB.child(sender).observeSingleEvent(of: .value, with: { (snapshot) in
+                let userDict = snapshot.value as! [String: Any]
+                
+                let username = userDict["username"] as! String
+                if (sender == Auth.auth().currentUser!.uid) {
+                    self.userName.text = username
+                    self.userMessageView.text = text
+                    print("Username      : ", username)
+                    print("message       : ", text)
+                } else {
+                    self.OpponentMessageView.text = text
+                    self.OpponentName.text = username
+                    print("Username      : ", username)
+                    print("message       : ", text)
+                }
+            })
+            /*
             usernameDB.observe(.childAdded, with: { (snapshot) in
                 let snapshotValue = snapshot.value as! Dictionary<String, String>
                 
                 senderUsername = snapshotValue["username"]! //give the username
-                print("Username      : ", senderUsername)
+                //print("Username      : ", senderUsername)
+                print("Text          : ", text)
                 
                 if (sender == Auth.auth().currentUser!.uid) {
-                    print("you made here")
                     self.userName.text = senderUsername
                     self.userMessageView.text = text
+                    print("Username      : ", senderUsername)
+                    print("message       : ", text)
+                } else {
+                    self.OpponentMessageView.text = text
+                    self.OpponentName.text = senderUsername
+                    print("Username      : ", senderUsername)
+                    print("message       : ", text)
                 }
                 
                 //TODO: do i need an else case in case the sender is not the current user?
                 //      How will I handle that case?
-            })
+            }) */
         })
     } //retrieve messages method
 
