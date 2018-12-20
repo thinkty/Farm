@@ -1,5 +1,4 @@
 PODS:
-
   - Firebase/Auth (5.11.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.4)
